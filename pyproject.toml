@@ -1,0 +1,19 @@
+[project]
+name = "repo-catchup-workflow"
+version = "0.1.0"
+description = "Mistral Workflow: GitHub pull-request catchup digest (merged + awaiting review) posted to Slack self-chat"
+requires-python = ">=3.12"
+dependencies = [
+    "mistralai-workflows[mistralai]>=3.18.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["apps/worker/src"]
+testpaths = ["tests"]
